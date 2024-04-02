@@ -28,3 +28,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOLD_ON_OTHER_KEY_PRESS
 #define RETRO_TAPPING
 #define TAPPING_TERM 100
+#define PERMISSIVE_HOLD
