@@ -1,0 +1,140 @@
+[
+  {
+    "name": "vscode format file",
+    "keycode": "FORMAT_FILE",
+    "macro": 
+    [
+      {"action": "tap", "keycodes":["LCMD", "K"]},
+      {"action": "tap", "keycodes":["LOPT", "F"]}
+    ]
+  },
+  {
+    "name": "vscode restart TS server",
+    "keycode": "TS_RESTART",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "K"]},
+      {"action": "tap", "keycodes":["LOPT", "T"]}
+    ]
+  },
+  {
+    "name": "vscode show hover",
+    "keycode": "SHOW_HOVER",
+    "macro":  [
+      {"action": "tap", "keycodes":["LCMD", "K"]},
+      {"action": "tap", "keycodes":["LCMD", "I"]}
+    ]
+  },
+  {
+    "name": "vscode run individual test",
+    "keycode": "RUN_SINGLE_TEST",
+    "macro":  [
+      {"action": "tap", "keycodes":["LCMD", "SEMICOLON"]},
+      {"action": "tap", "keycodes":["C"]}
+    ]
+  },
+  {
+    "name": "vscode run tests in file",
+    "keycode": "RUN_FILE_TEST",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "SEMICOLON"]},
+      {"action": "tap", "keycodes":["F"]}
+    ]
+  },
+  {
+    "name": "vscode refactor",
+    "keycode": "REFACTOR",
+    "macro":[
+      {"action": "tap", "keycodes":["LSFT", "RCTL", "R"]}
+    ]
+  },
+  {
+    "name": "vscode rename variable",
+    "keycode": "RENAME",
+    "macro": [
+      {"action": "tap", "keycodes":["F2"]}
+    ]
+  },
+  {
+    "name": "vscode go to references",
+    "keycode": "REFERENCES",
+    "macro": [
+      {"action": "tap", "keycodes":["LSFT", "F12"]}
+    ]
+  },
+  {
+    "name": "vscode go to definition",
+    "keycode": "DEFINITION",
+    "macro": [
+      {"action": "tap", "keycodes":["F12"]}
+    ]
+  },
+  {
+    "name": "vscode focus type tree",
+    "keycode": "TYPE_TREE",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "K"]},
+      {"action": "tap", "keycodes":["X"]}
+    ]
+  },
+  {
+    "name": "vscode widen editor pane",
+    "keycode": "WIDEN_EDITOR",
+    "macro": [
+      {"action": "tap", "keycodes":["LOPT", "LCMD", "RIGHT"]}
+    ]
+  },
+  {
+    "name": "vscode focus git changes",
+    "keycode": "GIT",
+    "macro": [
+      {"action": "tap", "keycodes":["RCTL", "RSFT", "G"]}
+    ]
+  },
+  {
+    "name": "vscode focus folders in explorer",
+    "keycode": "FOLDERS",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "E"]},
+      {"action": "tap", "keycodes":["F"]}
+    ]
+  },
+  {
+    "name": "vscode focus editor pane",
+    "keycode": "EDITOR",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "E"]},
+      {"action": "tap", "keycodes":["W"]}
+    ]
+  },
+  {
+    "name": "vscode focus pull request view",
+    "keycode": "GH_PRS",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "E"]},
+      {"action": "tap", "keycodes":["G"]}
+    ]
+  },
+  {
+    "name": "vscode find symbol",
+    "keycode": "SUMBOL",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "K"]},
+      {"action": "tap", "keycodes":["O"]}
+    ]
+  },
+  {
+    "name": "vscode focus PR changes",
+    "keycode": "GH_PR_CHANGES",
+    "macro": [
+      {"action": "tap", "keycodes":["LCMD", "E"]},
+      {"action": "tap", "keycodes":["RSFT","G"]}
+    ]
+  },
+  {
+    "name": "chrome bypass SSL error page",
+    "keycode": "UNSAFE",
+    "macro": [
+      "thisisunsafe"
+    ]
+  }
+]
