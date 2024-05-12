@@ -40,14 +40,9 @@ func map_macros_to_layout(layers [][]string, macro_map map[string]IndexedMacro) 
 	macro_regex := regexp.MustCompile(`^ANY\(M\*(.*?)\)`)
 	for layer_index, layer := range layers {
 		for key_index, key := range layer {
-
-			fmt.Println("key", key)
 			match := macro_regex.FindStringSubmatch(key)
 			if match != nil {
-
-				fmt.Println("match", match)
 				macro, ok := macro_map[match[1]]
-				fmt.Println("macro", macro)
 				if ok {
 					layers[layer_index][key_index] = fmt.Sprintf("ANY(QK_MACRO_%d)", macro.Index)
 				} else {
@@ -64,10 +59,8 @@ type IndexedMacro struct {
 }
 
 func transform_macros_to_map(macro_config []MacroConfig) (macro_map map[string]IndexedMacro, macro_array [][]interface{}) {
-	// Initialize the map
 	macro_map = make(map[string]IndexedMacro)
 
-	// Initialize the slice with the appropriate length, filled with nil slices
 	macro_array = make([][]interface{}, len(macro_config))
 
 	for index, macro := range macro_config {
