@@ -9,156 +9,236 @@
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "K"]
+        "keycodes": [
+          "LCMD",
+          "K"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["LOPT", "F"]
+        "keycodes": [
+          "LOPT",
+          "F"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "K"]
+        "keycodes": [
+          "LCMD",
+          "K"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["LOPT", "T"]
+        "keycodes": [
+          "LOPT",
+          "T"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "K"]
+        "keycodes": [
+          "LCMD",
+          "K"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["LCMD", "I"]
+        "keycodes": [
+          "LCMD",
+          "I"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "SEMICOLON"]
+        "keycodes": [
+          "LCMD",
+          "SEMICOLON"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["C"]
+        "keycodes": [
+          "C"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "SEMICOLON"]
+        "keycodes": [
+          "LCMD",
+          "SEMICOLON"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["F"]
+        "keycodes": [
+          "F"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LSFT", "RCTL", "R"]
+        "keycodes": [
+          "LSFT",
+          "RCTL",
+          "R"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["F2"]
+        "keycodes": [
+          "F2"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LSFT", "F12"]
+        "keycodes": [
+          "LSFT",
+          "F12"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["F12"]
+        "keycodes": [
+          "F12"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "K"]
+        "keycodes": [
+          "LCMD",
+          "K"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["X"]
+        "keycodes": [
+          "X"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LOPT", "LCMD", "RIGHT"]
+        "keycodes": [
+          "LOPT",
+          "LCMD",
+          "RIGHT"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["RCTL", "RSFT", "G"]
+        "keycodes": [
+          "RCTL",
+          "RSFT",
+          "G"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "E"]
+        "keycodes": [
+          "LCMD",
+          "E"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["F"]
+        "keycodes": [
+          "F"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "E"]
+        "keycodes": [
+          "LCMD",
+          "E"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["W"]
+        "keycodes": [
+          "W"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "E"]
+        "keycodes": [
+          "LCMD",
+          "E"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["G"]
+        "keycodes": [
+          "G"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "K"]
+        "keycodes": [
+          "LCMD",
+          "K"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["O"]
+        "keycodes": [
+          "O"
+        ]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": ["LCMD", "E"]
+        "keycodes": [
+          "LCMD",
+          "E"
+        ]
       },
       {
         "action": "tap",
-        "keycodes": ["RSFT", "G"]
+        "keycodes": [
+          "RSFT",
+          "G"
+        ]
       }
     ],
-    ["thisisunsafe"]
+    [
+      "thisisunsafe"
+    ]
   ],
   "layers": [
     [
       "KC_Q",
       "KC_W",
-      "LT(8,KC_E)",
+      "LT(6,KC_E)",
       "KC_R",
       "KC_T",
       "KC_Y",
@@ -166,10 +246,10 @@
       "KC_I",
       "RALT_T(KC_O)",
       "KC_P",
-      "LT(5,KC_A)",
-      "LT(4,KC_S)",
+      "LT(3,KC_A)",
+      "LT(2,KC_S)",
       "LCTL_T(KC_D)",
-      "LT(6,KC_F)",
+      "LT(4,KC_F)",
       "LALT_T(KC_G)",
       "KC_H",
       "KC_J",
@@ -186,82 +266,10 @@
       "KC_COMM",
       "KC_DOT",
       "KC_QUOT",
-      "LT(3,KC_ESC)",
+      "LT(1,KC_ESC)",
       "LSFT_T(KC_SPC)",
       "RSFT_T(KC_SPC)",
       "RGUI_T(KC_BSPC)"
-    ],
-    [
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "TO(0)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
-    ],
-    [
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "TO(0)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
     ],
     [
       "KC_ESC",
@@ -275,7 +283,7 @@
       "KC_LBRC",
       "KC_RBRC",
       "KC_TAB",
-      "LGUI(KC_S)",
+      "KC_LALT",
       "KC_LGUI",
       "KC_LALT",
       "LSFT(KC_TAB)",
@@ -289,7 +297,7 @@
       "LGUI(KC_C)",
       "LGUI(KC_V)",
       "LCA(KC_L)",
-      "LGUI(KC_L)",
+      "KC_RCTL",
       "KC_GRV",
       "KC_SLSH",
       "KC_BSLS",
@@ -382,8 +390,8 @@
       "KC_2",
       "KC_3",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
+      "KC_LCTL",
+      "KC_LALT",
       "KC_LSFT",
       "KC_NO",
       "KC_NO",
