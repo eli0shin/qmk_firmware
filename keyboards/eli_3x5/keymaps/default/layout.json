@@ -2,237 +2,157 @@
   "version": 1,
   "notes": "My awesome keymap",
   "documentation": "\"This file is a QMK Configurator export. You can import this at \u003chttps://config.qmk.fm\u003e. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: \u003chttps://docs.qmk.fm/#/newbs\u003e\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
-  "keyboard": "handwired/dactyl_manuform/4x5",
+  "keyboard": "eli_3x5",
   "keymap": "bare_layout",
   "layout": "LAYOUT",
   "macros": [
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "K"
-        ]
+        "keycodes": ["LCMD", "K"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "LOPT",
-          "F"
-        ]
+        "keycodes": ["LOPT", "F"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "K"
-        ]
+        "keycodes": ["LCMD", "K"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "LOPT",
-          "T"
-        ]
+        "keycodes": ["LOPT", "T"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "K"
-        ]
+        "keycodes": ["LCMD", "K"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "I"
-        ]
+        "keycodes": ["LCMD", "I"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "SEMICOLON"
-        ]
+        "keycodes": ["LCMD", "SEMICOLON"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "C"
-        ]
+        "keycodes": ["C"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "SEMICOLON"
-        ]
+        "keycodes": ["LCMD", "SEMICOLON"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "F"
-        ]
+        "keycodes": ["F"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LSFT",
-          "RCTL",
-          "R"
-        ]
+        "keycodes": ["LSFT", "RCTL", "R"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "F2"
-        ]
+        "keycodes": ["F2"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LSFT",
-          "F12"
-        ]
+        "keycodes": ["LSFT", "F12"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "F12"
-        ]
+        "keycodes": ["F12"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "K"
-        ]
+        "keycodes": ["LCMD", "K"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "X"
-        ]
+        "keycodes": ["X"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LOPT",
-          "LCMD",
-          "RIGHT"
-        ]
+        "keycodes": ["LOPT", "LCMD", "RIGHT"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "RCTL",
-          "RSFT",
-          "G"
-        ]
+        "keycodes": ["RCTL", "RSFT", "G"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "E"
-        ]
+        "keycodes": ["LCMD", "E"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "F"
-        ]
+        "keycodes": ["F"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "E"
-        ]
+        "keycodes": ["LCMD", "E"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "W"
-        ]
+        "keycodes": ["W"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "E"
-        ]
+        "keycodes": ["LCMD", "E"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "G"
-        ]
+        "keycodes": ["G"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "K"
-        ]
+        "keycodes": ["LCMD", "K"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "O"
-        ]
+        "keycodes": ["O"]
       }
     ],
     [
       {
         "action": "tap",
-        "keycodes": [
-          "LCMD",
-          "E"
-        ]
+        "keycodes": ["LCMD", "E"]
       },
       {
         "action": "tap",
-        "keycodes": [
-          "RSFT",
-          "G"
-        ]
+        "keycodes": ["RSFT", "G"]
       }
     ],
-    [
-      "thisisunsafe"
-    ]
+    ["thisisunsafe"]
   ],
   "layers": [
     [
@@ -266,19 +186,43 @@
       "KC_COMM",
       "KC_DOT",
       "KC_QUOT",
-      "LT(7,KC_NO)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "LT(3,KC_ESC)",
       "LSFT_T(KC_SPC)",
       "RSFT_T(KC_SPC)",
-      "RGUI_T(KC_BSPC)",
+      "RGUI_T(KC_BSPC)"
+    ],
+    [
       "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "TO(0)",
       "KC_NO",
       "KC_NO",
       "KC_NO"
@@ -314,67 +258,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "TO(0)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
-    ],
-    [
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "TO(0)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO"
@@ -410,22 +294,10 @@
       "KC_SLSH",
       "KC_BSLS",
       "KC_EQL",
-      "KC_LSFT",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "TO(0)",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_TRNS"
     ],
     [
       "KC_NO",
@@ -458,19 +330,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "TO(0)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO"
@@ -506,22 +366,10 @@
       "KC_TRNS",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "TO(0)",
       "KC_NO",
       "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_TRNS"
     ],
     [
       "KC_NO",
@@ -534,7 +382,7 @@
       "KC_2",
       "KC_3",
       "KC_NO",
-      "KC_LALT",
+      "KC_NO",
       "KC_NO",
       "KC_LSFT",
       "KC_NO",
@@ -554,22 +402,10 @@
       "KC_8",
       "KC_9",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "TO(0)",
       "KC_NO",
       "KC_TRNS",
-      "KC_TRNS",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_TRNS"
     ],
     [
       "KC_NO",
@@ -602,22 +438,10 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
       "TO(0)",
       "KC_NO",
       "KC_NO",
-      "QK_BOOT",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "QK_BOOT"
     ],
     [
       "KC_NO",
@@ -653,19 +477,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "LGUI(KC_P)",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "LGUI(KC_P)"
     ]
   ]
 }
