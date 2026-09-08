@@ -1,7 +1,8 @@
 {
   "version": 1,
-  "notes": "My awesome keymap",
-  "documentation": "\"This file is a QMK Configurator export. You can import this at \u003chttps://config.qmk.fm\u003e. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: \u003chttps://docs.qmk.fm/#/newbs\u003e\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
+  "notes": "Eli's 34-key split layout",
+  "documentation": "See ELI.md for layout editing and build instructions.",
+  "author": "Anonymous",
   "keyboard": "eli_3x5",
   "keymap": "bare_layout",
   "layout": "LAYOUT",

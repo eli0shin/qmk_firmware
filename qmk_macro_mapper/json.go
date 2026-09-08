@@ -1,30 +1,46 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
-	"io"
 	"os"
+	"sort"
+	"strconv"
+	"strings"
 )
-
-type MacroAction struct {
-	Action   string   `json:"action"`
-	Keycodes []string `json:"keycodes"`
-}
-
-type Macro struct {
-	Data interface{}
-}
 
 type Layout struct {
 	Version       int             `json:"version,omitempty"`
 	Notes         string          `json:"notes,omitempty"`
 	Documentation string          `json:"documentation,omitempty"`
+	Author        string          `json:"author,omitempty"`
 	Keyboard      string          `json:"keyboard,omitempty"`
 	Keymap        string          `json:"keymap,omitempty"`
 	Layout        string          `json:"layout,omitempty"`
 	Macros        [][]interface{} `json:"macros,omitempty"`
 	Layers        [][]string      `json:"layers,omitempty"`
+}
+
+type LayoutSource struct {
+	Version       int                   `json:"version,omitempty"`
+	Notes         string                `json:"notes,omitempty"`
+	Documentation string                `json:"documentation,omitempty"`
+	Author        string                `json:"author,omitempty"`
+	Keyboard      string                `json:"keyboard"`
+	Keymap        string                `json:"keymap"`
+	Layout        string                `json:"layout"`
+	UnusedRows    int                   `json:"unused_rows,omitempty"`
+	Layers        map[string]SplitLayer `json:"layers"`
+}
+
+type SplitLayer struct {
+	Left  Hand `json:"left"`
+	Right Hand `json:"right"`
+}
+
+type Hand struct {
+	Rows [][]string `json:"rows"`
 }
 
 type MacroConfig struct {
@@ -33,72 +49,131 @@ type MacroConfig struct {
 	Macro   []interface{} `json:"macro"`
 }
 
-func load_layout_json(file string) (layout Layout, err error) {
-	// Open our jsonFile
-	jsonFile, err := os.Open(file)
-	// if we os.Open returns an error then handle it
+func loadLayoutJSON(file string) (Layout, error) {
+	data, err := os.ReadFile(file)
 	if err != nil {
 		return Layout{}, err
 	}
 
-	fmt.Println("Successfully Opened layout file", file)
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
+	var source LayoutSource
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	if err := decoder.Decode(&source); err != nil {
+		return Layout{}, fmt.Errorf("parse layout JSON: %w", err)
+	}
+	if source.Keyboard == "" || source.Keymap == "" || source.Layout == "" {
+		return Layout{}, fmt.Errorf("keyboard, keymap, and layout are required")
+	}
+	if source.UnusedRows < 0 {
+		return Layout{}, fmt.Errorf("unused_rows cannot be negative")
+	}
 
-	// read our opened xmlFile as a byte array.
-	byteValue, err := io.ReadAll(jsonFile)
+	layers, err := flattenLayers(source.Layers, source.UnusedRows)
 	if err != nil {
 		return Layout{}, err
 	}
 
-	// we unmarshal our byteArray which contains our
-	// jsonFile's content into 'users' which we defined above
-	json.Unmarshal(byteValue, &layout)
-
-	return layout, nil
+	return Layout{
+		Version:       source.Version,
+		Notes:         source.Notes,
+		Documentation: source.Documentation,
+		Author:        source.Author,
+		Keyboard:      source.Keyboard,
+		Keymap:        source.Keymap,
+		Layout:        source.Layout,
+		Layers:        layers,
+	}, nil
 }
 
-func load_macro_json(file string) (macro_config []MacroConfig, err error) {
-	// Open our jsonFile
-	jsonFile, err := os.Open(file)
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		return []MacroConfig{}, err
+func flattenLayers(source map[string]SplitLayer, unusedRows int) ([][]string, error) {
+	if len(source) == 0 {
+		return nil, fmt.Errorf("at least one layer is required")
 	}
 
-	fmt.Println("Successfully Opened macro config file", file)
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
+	layerNumbers := make([]int, 0, len(source))
+	for key := range source {
+		number, err := strconv.Atoi(key)
+		if err != nil || number < 0 || strconv.Itoa(number) != key {
+			return nil, fmt.Errorf("layer key %q must be a non-negative integer", key)
+		}
+		layerNumbers = append(layerNumbers, number)
+	}
+	sort.Ints(layerNumbers)
 
-	// read our opened xmlFile as a byte array.
-	byteValue, err := io.ReadAll(jsonFile)
-	if err != nil {
-		return []MacroConfig{}, err
+	layers := make([][]string, len(layerNumbers))
+	expectedKeys := 0
+	for position, number := range layerNumbers {
+		if number != position {
+			return nil, fmt.Errorf("layers must be contiguous from 0; layer %d is missing", position)
+		}
+
+		layer, err := flattenLayer(source[strconv.Itoa(number)], unusedRows)
+		if err != nil {
+			return nil, fmt.Errorf("layer %d: %w", number, err)
+		}
+		if position == 0 {
+			expectedKeys = len(layer)
+		} else if len(layer) != expectedKeys {
+			return nil, fmt.Errorf("layer %d has %d keys; expected %d", number, len(layer), expectedKeys)
+		}
+		layers[position] = layer
 	}
 
-	// we unmarshal our byteArray which contains our
-	// jsonFile's content into 'users' which we defined above
-	json.Unmarshal(byteValue, &macro_config)
-
-	return macro_config, nil
+	return layers, nil
 }
 
-func write_output_to_json(layout Layout, out_file string) error {
-	jsonData, err := json.MarshalIndent(layout, "", "  ")
+func flattenLayer(layer SplitLayer, unusedRows int) ([]string, error) {
+	leftRows := layer.Left.Rows
+	rightRows := layer.Right.Rows
+	if len(leftRows) == 0 {
+		return nil, fmt.Errorf("each hand must contain at least one row")
+	}
+	if len(leftRows) != len(rightRows) {
+		return nil, fmt.Errorf("left has %d rows and right has %d", len(leftRows), len(rightRows))
+	}
+
+	keys := make([]string, 0)
+	for rowIndex := range leftRows {
+		left := leftRows[rowIndex]
+		right := rightRows[rowIndex]
+		if len(left) == 0 || len(left) != len(right) {
+			return nil, fmt.Errorf("row %d must have the same non-zero width on both hands", rowIndex)
+		}
+		for _, key := range append(append([]string{}, left...), right...) {
+			if strings.TrimSpace(key) == "" {
+				return nil, fmt.Errorf("row %d contains an empty keycode", rowIndex)
+			}
+			keys = append(keys, key)
+		}
+	}
+
+	unusedRowWidth := len(leftRows[len(leftRows)-1])
+	for range unusedRows {
+		for range unusedRowWidth * 2 {
+			keys = append(keys, "KC_NO")
+		}
+	}
+
+	return keys, nil
+}
+
+func loadMacroJSON(file string) ([]MacroConfig, error) {
+	data, err := os.ReadFile(file)
+	if err != nil {
+		return nil, err
+	}
+
+	var macros []MacroConfig
+	if err := json.Unmarshal(data, &macros); err != nil {
+		return nil, fmt.Errorf("parse macro JSON: %w", err)
+	}
+	return macros, nil
+}
+
+func writeOutputToJSON(layout Layout, file string) error {
+	data, err := json.MarshalIndent(layout, "", "  ")
 	if err != nil {
 		return err
 	}
-
-	file, err := os.Create(out_file)
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	_, err = file.Write(jsonData)
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return os.WriteFile(file, data, 0o644)
 }
