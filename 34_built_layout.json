@@ -284,7 +284,7 @@
       "KC_LBRC",
       "KC_RBRC",
       "KC_TAB",
-      "KC_LALT",
+      "KC_NO",
       "KC_LGUI",
       "KC_LALT",
       "LSFT(KC_TAB)",
@@ -306,7 +306,7 @@
       "TO(0)",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS"
+      "KC_RGUI"
     ],
     [
       "KC_NO",

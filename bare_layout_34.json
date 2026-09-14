@@ -29,7 +29,7 @@
       "left": {
         "rows": [
           ["KC_ESC", "LGUI(KC_W)", "KC_NO", "LGUI(KC_R)", "LGUI(KC_T)"],
-          ["KC_TAB", "KC_LALT", "KC_LGUI", "KC_LALT", "LSFT(KC_TAB)"],
+          ["KC_TAB", "KC_NO", "KC_LGUI", "KC_LALT", "LSFT(KC_TAB)"],
           ["KC_LCTL", "LGUI(KC_X)", "LGUI(KC_C)", "LGUI(KC_V)", "LCA(KC_L)"],
           ["TO(0)", "KC_TRNS"]
         ]
@@ -39,7 +39,7 @@
           ["LAG(KC_I)", "SGUI(KC_P)", "KC_MINS", "KC_LBRC", "KC_RBRC"],
           ["KC_LEFT", "KC_DOWN", "KC_UP", "KC_RGHT", "KC_ENT"],
           ["KC_RCTL", "KC_GRV", "KC_SLSH", "KC_BSLS", "KC_EQL"],
-          ["KC_TRNS", "KC_TRNS"]
+          ["KC_TRNS", "KC_RGUI"]
         ]
       }
     },
