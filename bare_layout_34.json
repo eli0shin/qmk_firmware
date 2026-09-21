@@ -39,7 +39,7 @@
           ["LAG(KC_I)", "SGUI(KC_P)", "KC_MINS", "KC_LBRC", "KC_RBRC"],
           ["KC_LEFT", "KC_DOWN", "KC_UP", "KC_RGHT", "KC_ENT"],
           ["KC_RCTL", "KC_GRV", "KC_SLSH", "KC_BSLS", "KC_EQL"],
-          ["KC_TRNS", "KC_RGUI"]
+          ["KC_TRNS", "KC_TRNS"]
         ]
       }
     },
