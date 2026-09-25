@@ -1,1 +1,3 @@
-// This file instentionally left blank
+#pragma once
+
+#define PERMISSIVE_HOLD
