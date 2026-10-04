@@ -2,7 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/qmk/qmk_firmware/master/data/schemas/keyboard.jsonschema",
   "keyboard_name": "3x5_34_key",
   "manufacturer": "eoshinsky",
-  "url": "",
   "maintainer": "eoshinsky",
   "usb": {
     "vid": "0x444D",
